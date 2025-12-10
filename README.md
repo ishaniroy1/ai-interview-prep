@@ -4,12 +4,10 @@
 
 AI Interview Prep is a web-based interview prep platform that helps job seekers prepare tech interviews in multiple roles. We integrated OpenAI's API to generate realistic interview questions and provide AI feedback on a user's responses. Users can create personalized interview sessions and practice with questions tailored to their target job role and difficulty level. No matter your role or skill level, this platform provides a simulated interview experience.
 
----
 
 ## Target Audience
 Primarily college-aged students with little to no interview experience. However, this tool is accessible to all job seekers as it can be tailored for different roles and skill levels.
 
---- 
 
 ## Features
 
@@ -22,7 +20,6 @@ Primarily college-aged students with little to no interview experience. However,
 - **User authentication**: Secure JWT-based authentication system with user registration and login
 - **Dashboard**: View, filter, and manage interview practice sessions on your Dashboard
 
----
 
 ## Tech Stack
 
@@ -30,7 +27,6 @@ Primarily college-aged students with little to no interview experience. However,
 
 **Backend**: Node.js, Express.js, MongoDB, OpenAI API
 
----
 
 ## Installation & Setup
 
@@ -97,7 +93,6 @@ npm run dev
 npm run build
 ```
 
----
 
 ## Deployment
 
@@ -107,26 +102,24 @@ Frontend URL: https://web-dev-interview-prep.netlify.app/
 
 Backend URL: https://ai-interview-prep-backend-iu4j.onrender.com
 
----
 
 ## Screenshots
 
 ### 1. Login & Registration
-![Login Page](https://via.placeholder.com/800x600?text=Login+Page)
+![Login Page](https://github.com/ishaniroy1/ai-interview-prep/blob/master/screenshots/login.png?raw=true)
 
 Users can securely create an account or log in with email and password. JWT authentication ensures secure session management.
 
 ### 2. Dashboard - Interview Sessions
-![Dashboard](https://via.placeholder.com/800x600?text=Dashboard+with+Sessions)
+![Dashboard](https://github.com/ishaniroy1/ai-interview-prep/blob/master/screenshots/dashboard.png?raw=true)
 
-View all your practice interview sessions, filter by job role and difficulty level, and manage your sessions with edit and delete options.
+View all your practice interview sessions, filter by difficulty level, and manage your sessions with edit and delete options.
 
 ### 3. Interview Simulator
-![Interview Simulator](https://via.placeholder.com/800x600?text=Interview+Simulator)
+![Interview Simulator](https://github.com/ishaniroy1/ai-interview-prep/blob/master/screenshots/session.png?raw=true)
 
-Answer AI-generated interview questions in real-time, skip questions if needed, and receive detailed AI-powered feedback on your responses.
+Answer AI-generated interview questions in real-time, skip questions if needed, and receive AI-powered feedback on your responses.
 
----
 
 ## API Endpoints
 
@@ -145,7 +138,6 @@ Answer AI-generated interview questions in real-time, skip questions if needed, 
 - `POST /api/ai/generate-questions` - Generate interview questions for a session (requires auth)
 - `POST /api/ai/generate-feedback` - Get AI feedback on a user's answer (requires auth)
 
----
 
 ## How to Use
 
@@ -160,30 +152,10 @@ Answer AI-generated interview questions in real-time, skip questions if needed, 
 5. **Get Feedback**: Submit your answer to receive AI-powered feedback with suggestions
 6. **Track Progress**: View all completed sessions on your Dashboard with performance history
 
----
 
 ## Future Enhancements
 
 - Real-time code editor for technical coding interviews
-- Video interview recording and playback
+- Audio interview recording and playback
 - Performance analytics dashboard with improvement tracking
-- Peer review system for answers
-- LinkedIn integration for job profile matching
-- Subscription tiers with customized question limits
-- Mobile app (React Native)
-
----
-
-## Support & Contributing
-
-For issues, feature requests, or contributions, please open an issue or pull request on GitHub.
-
-**GitHub Repository**: https://github.com/ishaniroy1/ai-interview-prep
-
----
-
-## License
-
-This project is licensed under the MIT License.
-
-
+- Subscription tiers with question limits
