@@ -1,0 +1,15 @@
+button,
+input[type="button"],
+input[type="submit"],
+a.inline-flex,
+input,
+select,
+textarea,
+.shadow-sm,
+.shadow-md,
+.shadow-lg,
+.bg-white,
+.bg-slate-50,
+.border {
+  border-radius: 0 !important;
+}
