@@ -106,17 +106,17 @@ Backend URL: https://ai-interview-prep-backend-iu4j.onrender.com
 ## Screenshots
 
 ### 1. Login & Registration
-![Login Page](https://github.com/ishaniroy1/ai-interview-prep/blob/master/screenshots/login.png?raw=true)
+![Login Page](https://raw.githubusercontent.com/ishaniroy1/ai-interview-prep/master/screenshots/login.png)
 
 Users can securely create an account or log in with email and password. JWT authentication ensures secure session management.
 
-### 2. Dashboard - Interview Sessions
-![Dashboard](https://github.com/ishaniroy1/ai-interview-prep/blob/master/screenshots/dashboard.png?raw=true)
+### 2. Dashboard
+![Dashboard](https://raw.githubusercontent.com/ishaniroy1/ai-interview-prep/master/screenshots/dashboard.png)
 
 View all your practice interview sessions, filter by difficulty level, and manage your sessions with edit and delete options.
 
-### 3. Interview Simulator
-![Interview Simulator](https://github.com/ishaniroy1/ai-interview-prep/blob/master/screenshots/session.png?raw=true)
+### 3. Interview Session
+![Interview Simulator](https://raw.githubusercontent.com/ishaniroy1/ai-interview-prep/master/screenshots/session.png)
 
 Answer AI-generated interview questions in real-time, skip questions if needed, and receive AI-powered feedback on your responses.
 
