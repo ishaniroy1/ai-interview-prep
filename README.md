@@ -2,52 +2,33 @@
 
 ## Project Overview
 
-AI Interview Prep is a comprehensive web-based platform that helps job seekers prepare for technical interviews across multiple roles. The platform uses OpenAI's GPT-3.5-turbo model to generate realistic, role-specific interview questions and provide intelligent feedback on user responses. Users can create personalized interview sessions, practice with questions tailored to their target job role and difficulty level, and receive AI-powered feedback to improve their interview performance. Whether you're preparing for a Frontend Developer, Backend Developer, Data Scientist, or Product Manager role, this platform adapts to your needs and provides a simulated interview experience.
+AI Interview Prep is a web-based interview prep platform that helps job seekers prepare tech interviews in multiple roles. We integrated OpenAI's API to generate realistic interview questions and provide AI feedback on a user's responses. Users can create personalized interview sessions and practice with questions tailored to their target job role and difficulty level. No matter your role or skill level, this platform provides a simulated interview experience.
 
 ---
 
+## Target Audience
+Primarily college-aged students with little to no interview experience. However, this tool is accessible to all job seekers as it can be tailored for different roles and skill levels.
+
+--- 
+
 ## Features
 
-- **Role-Specific Interview Sessions**: Create practice sessions for 10+ job roles including Frontend Developer, Backend Developer, Full-Stack Developer, UX/UI Designer, Product Manager, Data Scientist, Data Engineer, DevOps Engineer, QA Engineer, and Mobile App Developer
-- **AI-Powered Question Generation**: Uses OpenAI API to generate realistic, contextual interview questions based on job role, difficulty level, and session duration
-- **Intelligent Feedback System**: Get detailed AI-generated feedback on your answers with constructive suggestions for improvement
-- **Difficulty Levels**: Practice with Beginner, Intermediate, or Advanced difficulty questions to match your skill level
-- **Session Management**: Create, edit, update, and delete interview practice sessions with auto-generated descriptions for each role
-- **Progress Tracking**: Track your interview sessions with creation timestamps and session metadata
-- **User Authentication**: Secure JWT-based authentication system with user registration and login
-- **Responsive Design**: Clean, modern UI built with Tailwind CSS and sharp-cornered components for a professional appearance
-- **Real-time Question Handling**: Skip questions, submit answers, and get immediate feedback within a single session
-- **Session Dashboard**: View all your practice sessions in one place with filtering and search capabilities
+- **Role-specific options**: Select from 10+ tech roles
+    - Frontend Developer, Backend Developer, Full-Stack Developer, UX/UI Designer, Product Manager, Data Scientist, Data Engineer, DevOps Engineer, QA Engineer, and Mobile App Developer
+- **AI integration**: Uses OpenAI API to generate realistic interview questions based on role, difficulty level, and session duration
+- Get detailed feedback on your answers with suggestions for improvement
+- **Accessible for all skill levels**: Practice with beginner, intermediate, or Advanced difficulty questions to match your skill level
+- **Flexibility**: Skip questions, submit answers, and get immediate feedback within a single session
+- **User authentication**: Secure JWT-based authentication system with user registration and login
+- **Dashboard**: View, filter, and manage interview practice sessions on your Dashboard
 
 ---
 
 ## Tech Stack
 
-### Frontend
-- **React 18** - Modern UI library with hooks and functional components
-- **TypeScript** - Type-safe JavaScript for better code quality
-- **Vite** - Fast, next-generation build tool and dev server
-- **Tailwind CSS** - Utility-first CSS framework for responsive design
-- **React Router** - Client-side routing for SPA navigation
-- **React Hook Form** - Efficient form state management
-- **Zod** - TypeScript-first schema validation library
-- **Lucide React** - Beautiful, consistent SVG icon library
-- **React Toastify** - Toast notifications for user feedback
-- **Axios** - HTTP client for API requests
-- **date-fns** - Modern date utility library
+**Frontend**: React, TypeScript, Vite, Tailwind CSS
 
-### Backend
-- **Node.js** - JavaScript runtime environment
-- **Express.js** - Lightweight and flexible web framework
-- **MongoDB** - NoSQL database for flexible data storage
-- **Mongoose** - ODM for MongoDB with schema validation
-- **OpenAI SDK** - Integration with OpenAI's GPT-3.5-turbo API
-- **JWT (jsonwebtoken)** - Token-based authentication
-- **bcrypt** - Secure password hashing
-- **dotenv** - Environment variable management
-
-### Database
-- **MongoDB** - Cloud-hosted or local MongoDB instance for data persistence
+**Backend**: Node.js, Express.js, MongoDB, OpenAI API
 
 ---
 
@@ -58,6 +39,12 @@ AI Interview Prep is a comprehensive web-based platform that helps job seekers p
 - npm or yarn
 - MongoDB instance (local or Atlas)
 - OpenAI API key
+
+### Clone the Repository
+```bash
+git clone https://github.com/ishaniroy1/ai-interview-prep.git
+cd ai-interview-prep
+```
 
 ### Backend Setup
 
@@ -71,11 +58,11 @@ cd backend
 npm install
 ```
 
-3. Create a `.env` file in the backend directory:
-```
+3. Create a `.env` file in the backend directory with the following variables:
+```env
 MONGODB_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/ai-interview-prep
-JWT_SECRET=your_jwt_secret_key
-OPENAI_API_KEY=your_openai_api_key
+JWT_SECRET=your_jwt_secret_key_here
+OPENAI_API_KEY=sk-your-openai-api-key
 PORT=5000
 ```
 
@@ -83,6 +70,8 @@ PORT=5000
 ```bash
 npm start
 ```
+
+The backend will run on `http://localhost:5000`
 
 ### Frontend Setup
 
@@ -92,7 +81,7 @@ npm install
 ```
 
 2. Create a `.env` file in the root directory:
-```
+```env
 VITE_API_URL=http://localhost:5000
 ```
 
@@ -101,10 +90,41 @@ VITE_API_URL=http://localhost:5000
 npm run dev
 ```
 
-4. Build for production:
+4. Open your browser and navigate to `http://localhost:5173`
+
+5. To build for production:
 ```bash
 npm run build
 ```
+
+---
+
+## Deployment
+
+Used Render to deploy the backend and Netlify to deploy the frontend.
+
+Frontend URL: https://web-dev-interview-prep.netlify.app/
+
+Backend URL: https://ai-interview-prep-backend-iu4j.onrender.com
+
+---
+
+## Screenshots
+
+### 1. Login & Registration
+![Login Page](https://via.placeholder.com/800x600?text=Login+Page)
+
+Users can securely create an account or log in with email and password. JWT authentication ensures secure session management.
+
+### 2. Dashboard - Interview Sessions
+![Dashboard](https://via.placeholder.com/800x600?text=Dashboard+with+Sessions)
+
+View all your practice interview sessions, filter by job role and difficulty level, and manage your sessions with edit and delete options.
+
+### 3. Interview Simulator
+![Interview Simulator](https://via.placeholder.com/800x600?text=Interview+Simulator)
+
+Answer AI-generated interview questions in real-time, skip questions if needed, and receive detailed AI-powered feedback on your responses.
 
 ---
 
@@ -127,96 +147,43 @@ npm run build
 
 ---
 
-## Architecture
-
-### Frontend Architecture
-- **Pages**: Home, Login, Register, Dashboard, Simulator, NotFound
-- **Components**: Header, SessionCard, SessionForm, LoadingSpinner
-- **State Management**: React hooks (useState, useEffect) and Context API
-- **Routing**: React Router v6 with protected routes
-
-### Backend Architecture
-- **Routes**: Authentication, Sessions, AI endpoints
-- **Models**: User, Session MongoDB schemas
-- **Middleware**: JWT authentication, error handling
-- **Retry Logic**: Exponential backoff for handling OpenAI rate limits (429 errors)
-
----
-
-## Deployment
-
-### Deploying to Netlify (Frontend)
-
-1. Push your code to GitHub
-2. Connect your repository to Netlify
-3. Set build command: `npm run build`
-4. Set publish directory: `dist`
-5. Add environment variables in Netlify settings:
-   - `VITE_API_URL` - Your backend API URL
-
-### Deploying Backend
-
-The backend can be deployed to services like:
-- **Render.com** - Free tier available with MongoDB Atlas
-- **Railway.app** - Simple deployment with GitHub integration
-- **Heroku** - Popular hosting platform
-- **AWS/GCP/Azure** - For production-scale applications
-
----
-
-## Environment Variables
-
-### Frontend (.env)
-```
-VITE_API_URL=https://your-backend-url.com/api
-```
-
-### Backend (.env)
-```
-MONGODB_URI=mongodb+srv://user:password@cluster.mongodb.net/database
-JWT_SECRET=your_secure_secret_key
-OPENAI_API_KEY=sk-your-openai-key
-PORT=5000
-```
-
----
-
-## Usage
+## How to Use
 
 1. **Sign Up**: Create an account with email and password
 2. **Create Session**: Click "New Session" on the Dashboard
-3. **Configure Session**: 
-   - Enter session title
-   - Select job role (auto-generates description)
-   - Choose difficulty level
-   - Set duration in minutes
-4. **Start Interview**: Click the session to begin the interview simulator
-5. **Answer Questions**: Read the AI-generated question and type your answer
-6. **Get Feedback**: Submit your answer to receive AI-powered feedback
-7. **Track Progress**: View all your sessions on the Dashboard
+   - Enter a session title
+   - Select your target job role (description auto-generates)
+   - Choose difficulty level (Beginner, Intermediate, Advanced)
+   - Set session duration in minutes
+3. **Start Interview**: Click on a session to begin the interview simulator
+4. **Answer Questions**: Read the AI-generated question and type your response
+5. **Get Feedback**: Submit your answer to receive AI-powered feedback with suggestions
+6. **Track Progress**: View all completed sessions on your Dashboard with performance history
 
 ---
 
 ## Future Enhancements
 
-- Real-time code editor for coding interview questions
+- Real-time code editor for technical coding interviews
 - Video interview recording and playback
-- Performance analytics and improvement tracking
+- Performance analytics dashboard with improvement tracking
 - Peer review system for answers
-- Integration with LinkedIn for job matching
-- Subscription tiers with different question limits
+- LinkedIn integration for job profile matching
+- Subscription tiers with customized question limits
 - Mobile app (React Native)
+
+---
+
+## Support & Contributing
+
+For issues, feature requests, or contributions, please open an issue or pull request on GitHub.
+
+**GitHub Repository**: https://github.com/ishaniroy1/ai-interview-prep
 
 ---
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License.
 
----
 
-## Support
-
-For issues, feature requests, or contributions, please open an issue or pull request on GitHub.
-
-**GitHub Repository**: https://github.com/ishaniroy1/ai-interview-prep
