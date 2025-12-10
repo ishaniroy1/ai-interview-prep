@@ -7,7 +7,15 @@ import { X } from 'lucide-react';
 const ROLE_OPTIONS = [
   "Frontend Developer", "Backend Developer", "Full-Stack Developer", "UX/UI Designer", "Product Manager",
   "Data Scientist", "Data Engineer", "DevOps Engineer", "Quality Assurance (QA) Engineer", "Mobile App Developer"
-];
+] as const satisfies readonly string[];
+
+const sessionSchema = z.object({
+  title: z.string().min(1, "Title is required"),
+  description: z.string().optional(),
+  jobRole: z.string().min(1, "Job role is required"),
+  difficulty: z.enum(["beginner", "intermediate", "advanced"]),
+  duration: z.number().min(5).max(120)
+});
 
 const ROLE_DESCRIPTIONS: Record<string, string> = {
   'Frontend Developer': 'Focuses on building user-facing web interfaces using HTML, CSS, and JavaScript frameworks. Expect questions on React, component design, state management, and performance optimization.',
@@ -21,14 +29,6 @@ const ROLE_DESCRIPTIONS: Record<string, string> = {
   'Quality Assurance (QA) Engineer': 'Ensures software quality through testing strategies and automation. Expect questions on test design, automation tools, and debugging.',
   'Mobile App Developer': 'Builds mobile applications for iOS/Android. Expect questions on native or cross-platform frameworks, app lifecycle, and performance.'
 };
-
-const sessionSchema = z.object({
-  title: z.string().min(1, 'Title is required').max(100, 'Title must be less than 100 characters'),
-  description: z.string().max(500, 'Description must be less than 500 characters').optional(),
-  jobRole: z.enum(ROLE_OPTIONS as [string, ...string[]]),
-  difficulty: z.enum(['beginner', 'intermediate', 'advanced']),
-  duration: z.number().min(5, 'Duration must be at least 5 minutes').max(120, 'Duration must be less than 120 minutes')
-});
 
 type SessionFormData = z.infer<typeof sessionSchema>;
 
@@ -137,7 +137,7 @@ const SessionForm: React.FC<SessionFormProps> = ({
               ))}
             </select>
             {errors.jobRole && (
-              <p className="text-red-600 text-sm mt-1">{errors.jobRole.message}</p>
+              <p className="text-red-600 text-sm mt-1">{errors.jobRole.message || "Job role is required"}</p>
             )}
           </div>
           <div>

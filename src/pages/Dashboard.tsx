@@ -12,7 +12,7 @@ interface Session {
   title: string;
   description: string;
   jobRole: string;
-  difficulty: string;
+  difficulty: "beginner" | "intermediate" | "advanced";
   duration: number;
   createdAt: string;
   updatedAt: string;
